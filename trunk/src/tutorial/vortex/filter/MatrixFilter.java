@@ -61,7 +61,7 @@ public enum MatrixFilter {
 		}
 	};
 
-	public final float ALPHA = 0.2f;
+	public final float ALPHA = 0.5f;
 
 	abstract public float[] filter(float[] input, float[] output);
 }

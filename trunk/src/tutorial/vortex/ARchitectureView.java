@@ -15,12 +15,12 @@ public class ARchitectureView extends GLSurfaceView implements SurfaceHolder.Cal
 
 	private static final String LOG_TAG = ARchitectureView.class.getSimpleName();
 	private static final String TAG = "VortexView";
-	private ARchitectureRenderer2 _renderer;
+	private ARchitectureRenderer _renderer;
 	byte[] glCameraFrame = new byte[256 * 256];
 
 	public ARchitectureView(Context context) {
 		super(context);
-		_renderer = new ARchitectureRenderer2(this);
+		_renderer = new ARchitectureRenderer(this);
 //		this.setEGLConfigChooser(5, 6, 5, 8, 16, 0);
 		this.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
 		setRenderer(_renderer);
@@ -68,13 +68,13 @@ public class ARchitectureView extends GLSurfaceView implements SurfaceHolder.Cal
 	 */
 	public void onPreviewFrame(byte[] yuvs, Camera camera) {
 //		Log.d(TAG,"onPreviewFrame");
-		int bwCounter = 0;
-		int yuvsCounter = 0;
-		for (int y = 0; y < 160; y++) {
-			System.arraycopy(yuvs, yuvsCounter, glCameraFrame, bwCounter, 240);
+//		int bwCounter = 0;
+//		int yuvsCounter = 0;
+//		for (int y = 0; y < 160; y++) {
+//			System.arraycopy(yuvs, yuvsCounter, glCameraFrame, bwCounter, 240);
 //			_renderer.setFrameBuffer(glCameraFrame);
-			yuvsCounter = yuvsCounter + 240;
-			bwCounter = bwCounter + 256;
-		}
+//			yuvsCounter = yuvsCounter + 240;
+//			bwCounter = bwCounter + 256;
+//		}
 	}
 }

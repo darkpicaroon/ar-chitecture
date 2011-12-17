@@ -6,8 +6,8 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import tutorial.vortex.filter.MatrixFilter;
-import tutorial.vortex.helper.Game;
 import tutorial.vortex.helper.Glyphs;
+import tutorial.vortex.helper.RenderMonitor;
 import tutorial.vortex.primitives.Background;
 import tutorial.vortex.primitives.Square;
 import tutorial.vortex.primitives.Triangle;
@@ -25,9 +25,9 @@ import android.opengl.GLU;
 import android.opengl.Matrix;
 import android.util.Log;
 
-public class ARchitectureRenderer2 implements GLSurfaceView.Renderer {
+public class ARchitectureRenderer implements GLSurfaceView.Renderer {
 
-	private static final String TAG = ARchitectureRenderer2.class.getSimpleName();
+	private static final String TAG = ARchitectureRenderer.class.getSimpleName();
 
 	private float _xAngle;
 
@@ -58,7 +58,7 @@ public class ARchitectureRenderer2 implements GLSurfaceView.Renderer {
 	FloatBuffer cubeBuff;
 	FloatBuffer texBuff;
 
-	public ARchitectureRenderer2(GLSurfaceView vortexView) {
+	public ARchitectureRenderer(GLSurfaceView vortexView) {
 
 		this.mContext = vortexView.getContext();
 
@@ -119,8 +119,8 @@ public class ARchitectureRenderer2 implements GLSurfaceView.Renderer {
 	public void onDrawFrame(GL10 gl) {
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
-		Game.debug("Framerate", Float.toString(Game.fps()));
-		text.setText(Game.getDebugMessage());
+		RenderMonitor.debug("Framerate", Float.toString(RenderMonitor.fps()));
+		text.setText(RenderMonitor.getDebugMessage());
 
 		gl.glEnable(GL10.GL_DEPTH_TEST);
 		gl.glEnable(GL10.GL_CULL_FACE);
@@ -177,6 +177,9 @@ public class ARchitectureRenderer2 implements GLSurfaceView.Renderer {
 		gl.glEnable(GL10.GL_BLEND);
 		gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
 		gl.glTranslatef(0, _height, 0);
+//		gl.glRotatef(90, 0.0f, 0.0f, 1.0f);
+		
+//		gl.glRotatef(90, 1.0f, 0.0f, 0.0f);
 		text.render();
 		gl.glDisable(GL10.GL_BLEND);
 		gl.glDisable(GL10.GL_TEXTURE_2D);
@@ -210,12 +213,6 @@ public class ARchitectureRenderer2 implements GLSurfaceView.Renderer {
 	float[] I = new float[16];
 	float[] temp = new float[16];
 	float[] temp2 = new float[16];
-
-	private int textureSize;
-
-	private int previewFrameHeight;
-
-	private int previewFrameWidth;
 
 	void updateR() {
 
