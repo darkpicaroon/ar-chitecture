@@ -2,8 +2,7 @@ package tutorial.vortex;
 
 import java.io.IOException;
 
-import tutorial.vortex.camera.CameraPreview;
-import tutorial.vortex.camera2.CamLayer;
+import tutorial.vortex.camera.CamLayer;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,14 +16,14 @@ import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
 
-public class Vortex extends Activity implements SensorEventListener {
+public class ARchitecture extends Activity implements SensorEventListener {
 	private CamLayer mPreview;
-	private static final String LOG_TAG = Vortex.class.getSimpleName();
-	private VortexView2 _vortexView;
+	private static final String LOG_TAG = ARchitecture.class.getSimpleName();
+	private ARchitectureView _vortexView;
 	private SensorManager _sensorManager;
-	private CameraPreview _preview;
 	static int counter=0;
 	
 	// private tutorial.vortex.Vortex.Preview previewSurface;
@@ -34,7 +33,10 @@ public class Vortex extends Activity implements SensorEventListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		_vortexView = new VortexView2(this);
+		disableScreenTurnOff();
+		setNoTitle();
+		setFullscreen();
+		_vortexView = new ARchitectureView(this);
 		_sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 		mPreview = new CamLayer(this, _vortexView);
 		
@@ -49,7 +51,25 @@ public class Vortex extends Activity implements SensorEventListener {
 		// previewSurface = new Preview(this);
 
 	}
-
+    /**
+     * Avoid that the screen get's turned off by the system.
+     */
+	public void disableScreenTurnOff() {
+    	getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
+    			WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+    /**
+     * Maximize the application.
+     */
+    public void setFullscreen() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
+   
+    public void setNoTitle() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+    } 
 	@Override
 	public void onAccuracyChanged(Sensor arg0, int arg1) {
 		// TODO Auto-generated method stub

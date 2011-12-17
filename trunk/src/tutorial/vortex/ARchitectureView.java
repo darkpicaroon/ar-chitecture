@@ -11,16 +11,16 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
-public class VortexView2 extends GLSurfaceView implements SurfaceHolder.Callback, Camera.PreviewCallback {
+public class ARchitectureView extends GLSurfaceView implements SurfaceHolder.Callback, Camera.PreviewCallback {
 
-	private static final String LOG_TAG = VortexView2.class.getSimpleName();
+	private static final String LOG_TAG = ARchitectureView.class.getSimpleName();
 	private static final String TAG = "VortexView";
-	private VortexRenderer2 _renderer;
+	private ARchitectureRenderer2 _renderer;
 	byte[] glCameraFrame = new byte[256 * 256];
 
-	public VortexView2(Context context) {
+	public ARchitectureView(Context context) {
 		super(context);
-		_renderer = new VortexRenderer2(this);
+		_renderer = new ARchitectureRenderer2(this);
 //		this.setEGLConfigChooser(5, 6, 5, 8, 16, 0);
 		this.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
 		setRenderer(_renderer);
@@ -72,7 +72,7 @@ public class VortexView2 extends GLSurfaceView implements SurfaceHolder.Callback
 		int yuvsCounter = 0;
 		for (int y = 0; y < 160; y++) {
 			System.arraycopy(yuvs, yuvsCounter, glCameraFrame, bwCounter, 240);
-			_renderer.setFrameBuffer(glCameraFrame);
+//			_renderer.setFrameBuffer(glCameraFrame);
 			yuvsCounter = yuvsCounter + 240;
 			bwCounter = bwCounter + 256;
 		}
