@@ -138,31 +138,31 @@ public class ARchitectureRenderer implements GLSurfaceView.Renderer {
 			gl.glMultMatrixf(R, 0);
 		}
 		gl.glPushMatrix();
-		gl.glTranslatef(0.0f, -2.0f, 0.0f);
-		gl.glTranslatef(0.0f, 0.0f, -0.5f);
+		gl.glTranslatef(0.0f, 2.0f, 0.0f);
+//		gl.glTranslatef(0.0f, 0.0f, -0.5f);
 		gl.glRotatef(90, 1.0f, 0.0f, 0.0f);
 		gl.glRotatef(90, 0.0f, 1.0f, 0.0f);
 		mTriangle.draw(gl);
 		// mSquare.draw(gl);
 		gl.glPopMatrix();
 		//
-		gl.glPushMatrix();
-		gl.glTranslatef(3.0f, -2.0f, 0.0f);
-		gl.glTranslatef(0.0f, 0.0f, -0.5f);
-		gl.glRotatef(90, 1.0f, 0.0f, 0.0f);
-		gl.glRotatef(60, 0.0f, 1.0f, 0.0f);
-		mTriangle.draw(gl);
-		// mSquare.draw(gl);
-		gl.glPopMatrix();
+//		gl.glPushMatrix();
+//		gl.glTranslatef(3.0f, -2.0f, 0.0f);
+//		gl.glTranslatef(0.0f, 0.0f, -0.5f);
+//		gl.glRotatef(90, 1.0f, 0.0f, 0.0f);
+//		gl.glRotatef(60, 0.0f, 1.0f, 0.0f);
+//		mTriangle.draw(gl);
+//		// mSquare.draw(gl);
+//		gl.glPopMatrix();
 
-		gl.glPushMatrix();
-		gl.glTranslatef(-2.0f, -1.0f, 0.0f);
-		gl.glTranslatef(0.0f, 0.0f, -0.5f);
-		gl.glRotatef(80, 1.0f, 0.0f, 0.0f);
-		gl.glRotatef(60, 0.0f, 1.0f, 0.0f);
-		mTriangle.draw(gl);
-		// mSquare.draw(gl);
-		gl.glPopMatrix();
+//		gl.glPushMatrix();
+//		gl.glTranslatef(-2.0f, -1.0f, 0.0f);
+//		gl.glTranslatef(0.0f, 0.0f, -0.5f);
+//		gl.glRotatef(80, 1.0f, 0.0f, 0.0f);
+//		gl.glRotatef(60, 0.0f, 1.0f, 0.0f);
+//		mTriangle.draw(gl);
+//		// mSquare.draw(gl);
+//		gl.glPopMatrix();
 		//
 		gl.glDisable(GL10.GL_CULL_FACE);
 		gl.glDisable(GL10.GL_DEPTH_TEST);
