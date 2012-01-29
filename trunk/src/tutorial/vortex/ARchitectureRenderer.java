@@ -10,6 +10,7 @@ import tutorial.vortex.helper.Glyphs;
 import tutorial.vortex.helper.RenderMonitor;
 import tutorial.vortex.primitives.Background;
 import tutorial.vortex.primitives.Square;
+import tutorial.vortex.primitives.Synagoge;
 import tutorial.vortex.primitives.Triangle;
 import tutorial.vortex.text.Font;
 import tutorial.vortex.text.Font.FontStyle;
@@ -58,6 +59,8 @@ public class ARchitectureRenderer implements GLSurfaceView.Renderer {
 	FloatBuffer cubeBuff;
 	FloatBuffer texBuff;
 
+//	private Synagoge mSynagoge;
+
 	public ARchitectureRenderer(GLSurfaceView vortexView) {
 
 		this.mContext = vortexView.getContext();
@@ -71,9 +74,10 @@ public class ARchitectureRenderer implements GLSurfaceView.Renderer {
 
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-		mSquare = new Square();
+//		mSquare = new Square();
 		mTriangle = new Triangle(gl, mContext);
-		mBackground = new Background(gl);
+//		mSynagoge = new Synagoge(gl, mContext);
+//		mBackground = new Background(gl);
 		font = new Font(gl, mContext.getAssets(), "seven.ttf", 12, FontStyle.Plain);
 		text = font.newText(gl);
 		text.setText("This is a test string!!");
@@ -138,12 +142,13 @@ public class ARchitectureRenderer implements GLSurfaceView.Renderer {
 			gl.glMultMatrixf(R, 0);
 		}
 		gl.glPushMatrix();
-		gl.glTranslatef(0.0f, 2.0f, 0.0f);
+		gl.glTranslatef(0.0f, 10.0f, 0.0f);
 //		gl.glTranslatef(0.0f, 0.0f, -0.5f);
 		gl.glRotatef(90, 1.0f, 0.0f, 0.0f);
-		gl.glRotatef(90, 0.0f, 1.0f, 0.0f);
+//		gl.glRotatef(90, 0.0f, 1.0f, 0.0f);
 		mTriangle.draw(gl);
 		// mSquare.draw(gl);
+//		mSynagoge.draw(gl);
 		gl.glPopMatrix();
 		//
 //		gl.glPushMatrix();

@@ -3,5 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/model-loaders"/>
+	<classpathentry kind="lib" path="libs/gdx.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -49,7 +49,21 @@ public class ARchitectureCamLayer extends SurfaceView implements SurfaceHolder.C
 		mHolder.addCallback(this);
 		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 	}
-
+	public ARchitectureCamLayer(Context context) {
+		super(context);
+		this.mContext = context;
+//		this.callback = callback;
+		//get Display Size
+		DisplayMetrics metrics = new DisplayMetrics();
+		((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
+		mDisplayWidth = metrics.widthPixels;
+		mDisplayheight = metrics.heightPixels;
+		// Install a SurfaceHolder.Callback so we get notified when the
+		// underlying surface is created and destroyed.
+		SurfaceHolder mHolder = getHolder();
+		mHolder.addCallback(this);
+		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+	}
 	// mPreview.setLayoutParams(new LayoutParams(100,100))
 
 	public void surfaceCreated(SurfaceHolder holder) {

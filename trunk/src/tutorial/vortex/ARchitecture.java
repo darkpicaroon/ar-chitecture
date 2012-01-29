@@ -31,7 +31,8 @@ public class ARchitecture extends Activity implements SensorEventListener {
 		setFullscreen();
 		_vortexView = new ARchitectureView(this);
 		_sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-		mPreview = new ARchitectureCamLayer(this, _vortexView);
+//		mPreview = new ARchitectureCamLayer(this, _vortexView);
+		mPreview = new ARchitectureCamLayer(this);
 		
 //        if (counter==2) {
 //        	MediaPlayer mp=MediaPlayer.create(this, R.raw);
