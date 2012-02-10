@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MyFirstTriangleAndroid!</string>
+    <string name="app_name">ARchitecture</string>
+    <!-- Dashboard -->
+    <string name="btn_semper">Gottfried Semper</string>
+    <string name="btn_geschichte">Geschichte</string>
+    <string name="btn_alte">Alte Synagoge</string>
+    <string name="btn_neue">Neue Synagoge</string>
+    <string name="btn_einstellungen">Einstellungen</string>
+    <string name="btn_quellen">Quellen</string>
+    <!-- Gottfried Semper -->
+    <string name="semper_person_h">Gottfried Semper</string>
+    <string name="semper_person_desc">Gottfried Semper kurz vor seinem Tod</string>
+    <string name="semper_person_text">Gottfried Sempe wurde am 29. November 1803 und Hamburg geboren und verstarb am 15. Mai 1887 in Rom. Gottfried Semper war als Architekt im deutschsprachigen Raum tätig, unter Anderen in Dresden, Zürich, Wien, Winterthur und Bautzen. </string>
+    <string name="semper_zeit_h1">Zeit in Dresden I</string>
+    <string name="semper_zeit_h2">Zeit in Dresden II</string>
+    <string name="semper_zeit_text1">Am 17. Mai 1834 erhielt Semper den Ruf als Professor der Architektur an die Königlichen Akademie der bildenden Künste zu Dresden und wurde am 30. September in dieses Amt eingeführt. Der erste Entwurf und Bau eines Hoftheaters (der heutigen Semperoper) eröffnete und ist 1869 vollständig abgebrannt. Ebenso der zweite Entwurf stammt von Semper. Die Bauleitung übernahm allerdings sein Sohn Manfred Semper. Am 13. Februar 1945 wurde auch dieser bei den Luftangriffen zerstört. Der heutige dritte Bau entstand erst in der späten Nachkriegszeit und ist dem zweiten Bau nachempfunden.
+Semper wirkte wesentlich an Zwinger- und Umgebungsbauten. Von ihm entstand die Gemäldegalerie Alte Meister im Nordosten.</string>
+    <string name="semper_zeit_text2">Neben diesen großen Aufträgen entstanden auch andere Bauten, die untrennbar mit seinem Namen verbunden sind, etwa das Maternihospital, die Alte Synagoge, das Stadtpalais Oppenheim oder die für den Bankier Martin Wilhelm Oppenheim errichtete Villa Rosa. Letztere gilt als Prototyp deutscher Villenarchitektur.
+Am 9. Mai 1849 floh Semper und sein Freund Richard Wagner aus Dresden wegen der Teilnahme am Dresdner Maiaufstand. Er kehrte nie nach Dresden zurück.</string>
+    <string name="semper_zeit_desc1">Das erste Opernhaus Sempers</string>
+    <string name="semper_zeit_desc2">Sempergalerie am Theaterplatz, um 1900</string>
+    <!-- Geschichte -->
+    <string name="geschichte_h1">Zeit vor dem Bau</string>
+    <string name="geschichte_t1">Die erste historisch nachgewiesene Erwähnung einer Synagoge stammt aus dem Jahre 1265. Schon lange vor dem Nationalsozialismus führten die Juden ein schweres Leben im Raum Dresden. Gebetsräum sind lange Zeit verboten. Auch zu Verfolgungen und Hinrichtungen von Juden kam es. Erst im Jahre 1772 wurden wieder Beträume zugelassen. Eine offizielle Synagoge wurde  im Jahre 1837 gewilligt. </string>
+    <string name="geschichte_h2">Bau der Sempersynagoge</string>
+    <string name="geschichte_t2">Die alte Synagoge Dresdens – auch Sempersynagoge genannt - entwarf der durch weitere Dresdner Bauten bekannte Architekt Gottfried Semper. Den Auftrag zum Bau erhielt er 1838 und am 21. Juni im selben Jahr erfolgte bereits die Grundsteinlegung. Knapp zwei Jahre später, am 8. Mai 1840 wurde die Synagoge eingeweiht und somit wieder ein Zentrum jüdischen Lebens in der Elbestadt.</string>
+    <string name="geschichte_h3">Zerstörung</string>
+    <string name="geschichte_t3">Auch die Sempersynagoge musste in der Reichspogromnacht vom 9. auf den 10. November 1938 dem zerstörerischen Wüten Dresdner SA-Mannschaften weichen und brannte ungehindert nieder, da es der Feuerwehr nur erlaubt wurde umliegende Gebäude zu schützen. Steine der Synagoge wurden später im Straßenbau verwendet und die Kosten der Beseitigung hatte die jüdische Gemeinde selbst zu tragen. Einem mutigen Feuerwehrmann ist es zu verdanken, dass einer der zwei Davidsternen, welche das Dach des Gebäudes schmückten, noch heute zu betrachten ist. Der Dresdner versteckte den Stern heimlich und übergab ihm nach dem Kriegsende der Gemeinde zurück. </string>
+    <string name="geschichte_h4">Nachkriegszeit</string>
+    <string name="geschichte_t4">Zu jener Zeit diente die ehemalige Totenhalle am Jüdischen Friedhof FIedlerstraße als Behelfssynagoge und trug später den erwähnten Davidstern. 2001 wurde die Neue Synagoge Dresden fertiggestellt. Sie steht an dem ehemaligen Platz der alten Synagoge und im Boden vor dem Gemeindezentrum der Synagoge sind die Grundrisse der Sempersynagoge als Metallstreifen sichtbar. Nun sitzt über den Eingang zum Gebetshaus der erhaltene Davidstern. In unmittelbarer Nähe zur Synagoge wurde ein Mahnmal errichtet, das an die tragische Zeit und Zerstörung von 1938 erinnert. </string>
+    <string name="geschichte_bu1">Alte Synagoge Dresden 1860</string>
+    <string name="geschichte_bu2">Synagoge Fiedlerstraße 3</string>
+    <string name="geschichte_bu3">Gedenkstein an die 1938 zerstörte Alte Synagoge</string>
+
+</resources>
