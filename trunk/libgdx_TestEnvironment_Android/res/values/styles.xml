@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="activity" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/activity_background</item>
+    </style>
+
+    <style name="headline_container" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_marginBottom">@dimen/headline_marginV</item>
+        <item name="android:layout_marginRight">@dimen/headline_marginH</item>
+        <item name="android:layout_marginLeft">@dimen/headline_marginH</item>
+        <item name="android:layout_marginTop">@dimen/headline_marginV</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="text_headline" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_marginRight">@dimen/headline_marginH</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_loud</item>
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="text_desc" parent="@android:style/TextAppearance.Medium">
+        <item name="android:padding">5dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/headline_marginV</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_normal</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="text_article" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_marginRight">@dimen/headline_marginH</item>
+        <item name="android:layout_marginLeft">@dimen/headline_marginH</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_normal</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="text_image" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_marginTop">@dimen/headline_marginV</item>
+        <item name="android:paddingLeft">@dimen/headline_marginH</item>
+        <item name="android:paddingRight">@dimen/headline_marginH</item>
+        <item name="android:background">@color/text_low</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="button_media">
+        <item name="android:layout_margin">6dip</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+         <item name="android:background">@drawable/home_button</item>
+    </style>
+
+    <style name="HomeButton">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_highlighted</item>
+        <item name="android:background">@drawable/home_button</item>
+    </style>
+
+</resources>

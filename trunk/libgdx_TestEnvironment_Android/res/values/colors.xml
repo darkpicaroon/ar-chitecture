@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="text_normal">#FF444444</color>
+    <color name="text_highlighted">#FF666633</color>
+    <color name="text_loud">#FF990033</color>
+    <color name="text_low">#FFCCCC99</color>
+    
+    <color name="background_desc">#ffeeeeee</color>
+    
+    <color name="activity_background">#FFFFFFFF</color>
+
+     <color name="light_brown">#ffDCCCAA</color>
+     <color name="brown">#ff827259</color>
+    
+</resources>
