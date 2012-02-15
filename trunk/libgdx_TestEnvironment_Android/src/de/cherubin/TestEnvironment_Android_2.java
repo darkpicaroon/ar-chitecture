@@ -2,6 +2,8 @@ package de.cherubin;
 
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.test.meshcolortexture.TestEnvironment;
+import com.test.meshcolortexture.TestEnvironmentRenderer;
+
 import de.cherubin.extern.MyAndroidApplication;
 
 import android.os.Bundle;
@@ -16,8 +18,8 @@ public class TestEnvironment_Android_2 extends MyAndroidApplication {
 		config.useCompass = true;
 		config.useWakelock = false;
 		// _app=new TestEnvironment();
-//		initialize(new TestEnvironmentRenderer(), config);
-		initialize(new TestEnvironment(), config);
+		initialize(new TestEnvironmentRenderer(), config);
+//		initialize(new TestEnvironment(), config);
 	}
 
 	protected void onResume() {

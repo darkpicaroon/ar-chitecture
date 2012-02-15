@@ -1,18 +1,11 @@
 package de.cherubin.cv;
 
-import de.cherubin.GeschichteActivity;
+import de.cherubin.AbstractPageActivity;
 import de.cherubin.PlaybackInterface;
 import de.cherubin.R;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.GradientDrawable.Orientation;
-import android.speech.tts.TextToSpeech;
-import android.speech.tts.TextToSpeech.OnInitListener;
-import android.speech.tts.TextToSpeech.OnUtteranceCompletedListener;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -30,7 +23,7 @@ public class CV_Abschnitt extends LinearLayout implements OnClickListener {
 
 	public ZUSTAND mZustand;
 
-	public CV_Abschnitt(GeschichteActivity pbi, String headline, String text, int drawableID) {
+	public CV_Abschnitt(AbstractPageActivity pbi, String headline, String text, int drawableID) {
 		super(pbi.getApplicationContext());
 
 		LayoutInflater inflater = (LayoutInflater) pbi.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
