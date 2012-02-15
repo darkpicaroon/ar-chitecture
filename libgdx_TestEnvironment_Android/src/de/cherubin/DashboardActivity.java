@@ -34,11 +34,11 @@ public class DashboardActivity extends Activity {
 	}
 
 	public void onClickAlte(View v) {
-
+		startActivity(new Intent(this, AlteSynagogeActivity.class));
 	}
 
 	public void onClickNeue(View v) {
-
+		startActivity(new Intent(this, NeueSynagogeActivity.class));
 	}
 
 	public void onClickEinstellungen(View v) {
@@ -49,4 +49,7 @@ public class DashboardActivity extends Activity {
 
 	}
 
+	public void onClick3D(View v) {
+		startActivity(new Intent(this, TestEnvironment_Android_2.class));
+	}
 }

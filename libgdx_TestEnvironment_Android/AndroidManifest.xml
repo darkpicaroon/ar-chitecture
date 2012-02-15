@@ -25,7 +25,13 @@
         </activity>
         <activity android:name=".SemperActivity" >
         </activity>
-                <activity android:name=".GeschichteActivity" >
+        <activity android:name=".GeschichteActivity" >
+        </activity>
+        <activity android:name=".NeueSynagogeActivity" >
+        </activity>
+        <activity android:name=".AlteSynagogeActivity" >
+        </activity>
+        <activity android:screenOrientation="landscape" android:name=".TestEnvironment_Android_2" >
         </activity>
     </application>
 

@@ -13,14 +13,14 @@
         <Button
             android:id="@+id/home_btn_semper"
             style="@style/HomeButton"
-            android:drawableTop="@drawable/icon"
+            android:drawableTop="@drawable/icon_semper"
             android:onClick="onClickSemper"
             android:text="@string/btn_semper" />
 
         <Button
             android:id="@+id/home_btn_geschichte"
             style="@style/HomeButton"
-            android:drawableTop="@drawable/icon"
+            android:drawableTop="@drawable/icon_geschichte"
             android:onClick="onClickGeschichte"
             android:text="@string/btn_geschichte" />
     </LinearLayout>
@@ -34,14 +34,14 @@
         <Button
             android:id="@+id/home_btn_alte"
             style="@style/HomeButton"
-            android:drawableTop="@drawable/icon"
+            android:drawableTop="@drawable/icon_alte"
             android:onClick="onClickAlte"
             android:text="@string/btn_alte" />
 
         <Button
             android:id="@+id/home_btn_neue"
             style="@style/HomeButton"
-            android:drawableTop="@drawable/icon"
+            android:drawableTop="@drawable/icon_neue"
             android:onClick="onClickNeue"
             android:text="@string/btn_neue" />
     </LinearLayout>
@@ -55,14 +55,14 @@
         <Button
             android:id="@+id/home_btn_einstellungen"
             style="@style/HomeButton"
-            android:drawableTop="@drawable/icon"
-            android:onClick="onClickEinstellungen"
-            android:text="@string/btn_einstellungen" />
+            android:drawableTop="@drawable/icon_3d"
+            android:onClick="onClick3D"
+            android:text="@string/btn_3d" />
 
         <Button
             android:id="@+id/home_btn_quellen"
             style="@style/HomeButton"
-            android:drawableTop="@drawable/icon"
+            android:drawableTop="@drawable/icon_quellen"
             android:onClick="onClickQuellen"
             android:text="@string/btn_quellen" >
         </Button>

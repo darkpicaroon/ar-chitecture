@@ -10,6 +10,7 @@
     <string name="btn_neue">Neue Synagoge</string>
     <string name="btn_einstellungen">Einstellungen</string>
     <string name="btn_quellen">Quellen</string>
+    <string name="btn_3d">Synagoge in 3D</string>
     <!-- Gottfried Semper -->
     <string name="semper_person_h">Gottfried Semper</string>
     <string name="semper_person_desc">Gottfried Semper kurz vor seinem Tod</string>
@@ -33,6 +34,35 @@ Am 9. Mai 1849 floh Semper und sein Freund Richard Wagner aus Dresden wegen der 
     <string name="geschichte_t4">Zu jener Zeit diente die ehemalige Totenhalle am Jüdischen Friedhof FIedlerstraße als Behelfssynagoge und trug später den erwähnten Davidstern. 2001 wurde die Neue Synagoge Dresden fertiggestellt. Sie steht an dem ehemaligen Platz der alten Synagoge und im Boden vor dem Gemeindezentrum der Synagoge sind die Grundrisse der Sempersynagoge als Metallstreifen sichtbar. Nun sitzt über den Eingang zum Gebetshaus der erhaltene Davidstern. In unmittelbarer Nähe zur Synagoge wurde ein Mahnmal errichtet, das an die tragische Zeit und Zerstörung von 1938 erinnert. </string>
     <string name="geschichte_bu1">Alte Synagoge Dresden 1860</string>
     <string name="geschichte_bu2">Synagoge Fiedlerstraße 3</string>
-    <string name="geschichte_bu3">Gedenkstein an die 1938 zerstörte Alte Synagoge</string>
+    <string name="geschichte_bu3">Abnahme des Davidstern von einem der beiden Türmen</string>
+    <string name="geschichte_bu4">Gedenkstein an die 1938 zerstörte Alte Synagoge</string>
+
+    <!-- Neue Synagoge -->
+    <string name="neue_h1">Allgemein</string>
+    <string name="neue_t1">Dresdens neue Synagoge wurde im Jahre 2001 fertiggestellt. Vier Jahre zuvor wurde das Projekt als Architekturwettbewerb ausgeschrieben. Den Zuschlag erhielt der Entwurf von den Architekten Wandel, Hoefer und Lorch + Hirsch. Damit wurde nicht der Wettbewerbsgewinner, sondern der Drittplatzierte von der jüdischen Gemeinde favorisiert. Die Neue Synagoge steht nun am Hasenberg 1 in Dresden und wurde 2002 als Europäisches Gebäude des Jahres gekürt. </string>
+    <string name="neue_h2">Gemeindezentrum</string>
+    <string name="neue_t2">Das Gemeindezentrum im Süden ist etwas niedriger als die Synagoge. Es nimmt 1400 m² auf drei Geschossen ein charakterisiert sich als Funktionalbau mit Foyer. Zum Hof hin befindet sich eine große Glasfront. Zu den Straßenseiten wurden 39 kleine Fenster in das Mauerwerk integriert. Das Zentrum beherbergt eine Bibliothek, Verwaltungsapparate, Schulungsräume, Sitzungszimmer einen großen Gemeindesaal, der auch für öffentliche Veranstaltungen und Konzerte genutzt wird.</string>
+    <string name="neue_h3">Neue Synagoge</string>
+    <string name="neue_t3">Die neue Synagoge wurde aus gefärbtem Beton errichtet und lehnt sich damit an die Sandsteinarchitektur der Dresdner Altstadt an. Die Höhe beträgt 24 Meter. Der Baukörper besteht aus 23 Stufen und jede Stufe ist gegenüber der unteren leicht verdreht. Diese schrittweise Drehung bewirkt, dass sich die unterste Schicht am Grundstück orientiert und die oberste sich genau nach Osten ausrichtet, wie es für jüdische Gotteshäuser gefordert wird. Zugleich erfährt das Gebäude Dynamik und relativiert damit die Monumentalität des Baukörpers.</string>
+    <string name="neue_h4">Neue Synagoge I</string>
+    <string name="neue_t4">Die Torarollen, das Vorbeterpult (Birna), die Ampel und Orgel sind im Osten platziert. Die Synagoge verdeutlicht das Begriffspaar Tempel und Zelt als architektonische Grunderfahrung des Judentums. Das massive Mauerwerk und eine von der Decke hängendes Metallgewebe ergeben ein Raum in Raum Konzept und symbolisieren Tempel und Zelt.</string>
+    <string name="neue_bu1">Inschrift am Zugang zur Neuen Synagoge</string>
+    <string name="neue_bu2">Gemeindezentrum an der Südseite</string>
+    <string name="neue_bu3">Hof und Blick auf die Synagoge</string>
+    <string name="neue_bu4">Tempel- und Zeltanalogie im Inneren</string>
+
+    <!-- Alte Synagoge -->
+    <string name="alte_h1">Alte Synagoge</string>
+    <string name="alte_t1">Der auch Sempersynagoge genannter Bau von Gottfried Semper wurde 1838 erbaut und 100 Jahre später in der Reichspogromnacht zerstört. 2001 wurde auf dem Grundstück der alten Synagoge die Neue Synagoge Dresdens erbaut. Die Grundrisse der alten Synagoge sind im Synagogenhof als Metallstreifen eingearbeitet.</string>
+    <string name="alte_h2">Stil</string>
+    <string name="alte_t2">Der von Semper entworfene Bau zeigt eine „kubische Geschlossenheit des Bauens in Weiterentwicklung der französischen Revolutionsarchitektur“ und wurde mit „romanischen Grundformen und orientalischen Kuppeln“ verbunden. Die romanischen und orientalischen Elemente nutzt Semper im Rahmen einer „byzantinisch-romantischen Stilisierung“, um auf die „morgenländische Herkunft“ der jüdischen Gemeinde hinzuweisen. Das äußere romanische Erscheinungsbild stand jedoch in einem eklatanten Kontrast zum inneren orientalischen Erscheinungsbild. Sie Synagoge stellt das „früheste Beispiel für einen gänzlich im orientalischen Stil gestalteten Innenraum“ dar.</string>
+    <string name="alte_h3">Äußeres</string>
+    <string name="alte_t3">Der Primäre Zentralbau weist einen quadratischen Grundriss von 20 mal 20 Metern auf. Über dem Mittelraum des Zentralbaus erhob sich ein oktogonaler Tambour mit einem flachen Zeltdach. Eine an der Westseite befindliche leicht eingezogene Vorhalle diente als Eingang und war von zwei achteckigen Turmstümpfen mit flachgewölbten Kuppeln flankiert. Die Rundbogenportale und -fenster waren historisierend im Stil der Neoromanik gestaltet worden. Ebenfalls neoromanisch war ein Rundbogenfries im Gesims. Der Putzbau hatte Tür- und Fenstereinfassungen aus Sandstein, wobei die Kuppelkonstruktion aus Holz war. Im Tympanon über dem äußeren Hoftor stand auf Hebräisch: „Mein Haus werde genannt ein Haus der Andacht allen Völkern“.</string>
+    <string name="alte_h4">Inneres</string>
+    <string name="alte_t4">Der auf 20 mal 20 Metern quadratisch gestaltete Innenraum war auf dem Grundriss eines griechischen Kreuzes errichtet worden. Vier Pfeiler stützten den hohen Tambour mit Kuppel, wobei diese an die vier Pfeiler des Stiftszeltes erinnern sollten. Im östlichen Querarm befand sich der Toraschrein (Aron ha-Qodesch), der aus Eichenholz bestand und mit Niellos und Intarsien verziert worden war. Vor dem Toraschrein war ein Podium mit dem Vorbeterpult (Bima). Der Schrein wurde zu beiden Seiten von zwei siebenarmigen Leuchtern (Menora) flankiert. Alle Querarme des Quadrats (bis auf das mit dem Toraschrein), waren gleichermaßen mit Rundbogen, Pfeilern und den gleichen zwei Säulen in drei Achsen gegliedert worden, wo die zweigeschossigen Emporen untergebracht waren. Die Kapitelle werden einerseits als maurisch-byzantinisch angesehen. Andererseits soll das Kapitellstück die Alhambra zu Granada zitieren. Das Interieur hatte eine „reiche, buntfarbige Dekoration maurischer Motive.</string>
+    <string name="alte_bu1">Foto der alte Sempersynagoge</string>
+    <string name="alte_bu2">Querschnitt der alten Synagoge</string>
+    <string name="alte_bu3">Grundriss der Alten Synagoge</string>
+    <string name="alte_bu4">das Innere der alten Synagoge</string>
 
 </resources>
