@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.markupartist.android.widget.ActionBar
+        android:id="@+id/actionbar"
+        style="@style/ActionBar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout style="@style/headline_container" >
+
+                <TextView
+                    style="@style/text_headline"
+                    android:text="@string/quellen_h1" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l1" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_q1" />
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l2" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_q2" />
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l3" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_q3" />
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l4" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_q4" />
+
+            <LinearLayout style="@style/headline_container" >
+
+                <TextView
+                    style="@style/text_headline"
+                    android:text="@string/quellen_h2" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l1" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_b1" />
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l2" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_b2" />
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l3" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_b3" />
+
+            <TextView
+                style="@style/quellen_label"
+                android:text="@string/quellen_l4" />
+
+            <TextView
+                style="@style/quellen_quelle"
+                android:text="@string/quellen_b4" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

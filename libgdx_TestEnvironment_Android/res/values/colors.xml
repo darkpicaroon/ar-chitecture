@@ -5,12 +5,13 @@
     <color name="text_highlighted">#FF666633</color>
     <color name="text_loud">#FF990033</color>
     <color name="text_low">#FFCCCC99</color>
-    
     <color name="background_desc">#ffeeeeee</color>
-    
     <color name="activity_background">#FFFFFFFF</color>
+    <color name="light_brown">#ffDCCCAA</color>
+    <color name="brown">#ff827259</color>
+    <!-- actionbar -->
+    <color name="actionbar_separator">#baac90</color>
+    <color name="actionbar_background_start">#b2a079</color>
+    <color name="actionbar_background_end">#8d7b5f</color>
 
-     <color name="light_brown">#ffDCCCAA</color>
-     <color name="brown">#ff827259</color>
-    
 </resources>

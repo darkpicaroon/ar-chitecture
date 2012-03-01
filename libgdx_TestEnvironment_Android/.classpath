@@ -8,5 +8,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/libgdx_TestEnvironment"/>
 	<classpathentry kind="lib" path="/libgdx_TestEnvironment/libs/gdx.jar" sourcepath="/libgdx_TestEnvironment/libs/gdx-sources.jar"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="src" path="/MyActionBar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 import de.cherubin.cv.CV_Abschnitt;
 import de.cherubin.cv.CV_Abschnitt.ZUSTAND;
+import de.cherubin.helper.GUITools;
+import de.cherubin.helper.GUITools.ACTIONBAR_TYPE;
 import de.cherubin.listener.MyHandler;
 import android.app.Activity;
 import android.content.Intent;
@@ -12,10 +14,13 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.speech.tts.TextToSpeech.OnUtteranceCompletedListener;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 abstract public class AbstractPageActivity extends Activity implements OnInitListener, PlaybackInterface, OnUtteranceCompletedListener {
 	private static final int MY_DATA_CHECK_CODE = 0;
+
+	private static final String TAG = "AbstractPageActivity";
 
 	private Drawable dStop;
 	private MyHandler mHandler;
@@ -24,15 +29,16 @@ abstract public class AbstractPageActivity extends Activity implements OnInitLis
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.page);
 		LinearLayout container = (LinearLayout) findViewById(R.id.container);
+		GUITools.buildActionBar(this, ACTIONBAR_TYPE.HOME, getString(R.string.ab_dashboard));
 		dStop = getResources().getDrawable(R.drawable.ic_stop);
 		dPlay = getResources().getDrawable(R.drawable.ic_play);
-		
+
 		mHandler = new MyHandler(this);
-		
-		initData(container,mHandler);
+
+		initData(container, mHandler);
 
 		Intent checkIntent = new Intent();
 		checkIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
@@ -40,7 +46,15 @@ abstract public class AbstractPageActivity extends Activity implements OnInitLis
 
 	}
 
-	abstract void initData(LinearLayout container,MyHandler mHandler);
+	@Override
+	protected void onPause() {
+		super.onPause();
+		Log.d(TAG, "onPause");
+		if (mTts != null)
+			mTts.stop();
+	}
+
+	abstract void initData(LinearLayout container, MyHandler mHandler);
 
 	private TextToSpeech mTts;
 	private HashMap<String, String> mParams;
