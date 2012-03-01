@@ -3,6 +3,12 @@
 
     <string name="hello">Hello World, MyFirstTriangleAndroid!</string>
     <string name="app_name">ARchitecture</string>
+    <!-- ActionBar -->
+    <string name="ab_dashboard">ARchitecture</string>
+    <string name="ab_semper">Gottfried Semper</string>
+    <string name="ab_alte">Alte Synagoge</string>
+    <string name="ab_neue">Neue Synagoge</string>
+    <string name="ab_geschichte">Geschichte der Synagogen</string>
     <!-- Dashboard -->
     <string name="btn_semper">Gottfried Semper</string>
     <string name="btn_geschichte">Geschichte</string>
@@ -12,17 +18,17 @@
     <string name="btn_quellen">Quellen</string>
     <string name="btn_3d">Synagoge in 3D</string>
     <!-- Gottfried Semper -->
-    <string name="semper_person_h">Gottfried Semper</string>
-    <string name="semper_person_desc">Gottfried Semper kurz vor seinem Tod</string>
-    <string name="semper_person_text">Gottfried Sempe wurde am 29. November 1803 und Hamburg geboren und verstarb am 15. Mai 1887 in Rom. Gottfried Semper war als Architekt im deutschsprachigen Raum tätig, unter Anderen in Dresden, Zürich, Wien, Winterthur und Bautzen. </string>
-    <string name="semper_zeit_h1">Zeit in Dresden I</string>
-    <string name="semper_zeit_h2">Zeit in Dresden II</string>
-    <string name="semper_zeit_text1">Am 17. Mai 1834 erhielt Semper den Ruf als Professor der Architektur an die Königlichen Akademie der bildenden Künste zu Dresden und wurde am 30. September in dieses Amt eingeführt. Der erste Entwurf und Bau eines Hoftheaters (der heutigen Semperoper) eröffnete und ist 1869 vollständig abgebrannt. Ebenso der zweite Entwurf stammt von Semper. Die Bauleitung übernahm allerdings sein Sohn Manfred Semper. Am 13. Februar 1945 wurde auch dieser bei den Luftangriffen zerstört. Der heutige dritte Bau entstand erst in der späten Nachkriegszeit und ist dem zweiten Bau nachempfunden.
+    <string name="semper_h1">Gottfried Semper</string>
+    <string name="semper_t1">Gottfried Sempe wurde am 29. November 1803 und Hamburg geboren und verstarb am 15. Mai 1887 in Rom. Gottfried Semper war als Architekt im deutschsprachigen Raum tätig, unter Anderen in Dresden, Zürich, Wien, Winterthur und Bautzen. </string>
+    <string name="semper_h2">Zeit in Dresden I</string>
+    <string name="semper_t2">Am 17. Mai 1834 erhielt Semper den Ruf als Professor der Architektur an die Königlichen Akademie der bildenden Künste zu Dresden und wurde am 30. September in dieses Amt eingeführt. Der erste Entwurf und Bau eines Hoftheaters (der heutigen Semperoper) eröffnete und ist 1869 vollständig abgebrannt. Ebenso der zweite Entwurf stammt von Semper. Die Bauleitung übernahm allerdings sein Sohn Manfred Semper. Am 13. Februar 1945 wurde auch dieser bei den Luftangriffen zerstört. Der heutige dritte Bau entstand erst in der späten Nachkriegszeit und ist dem zweiten Bau nachempfunden.
 Semper wirkte wesentlich an Zwinger- und Umgebungsbauten. Von ihm entstand die Gemäldegalerie Alte Meister im Nordosten.</string>
-    <string name="semper_zeit_text2">Neben diesen großen Aufträgen entstanden auch andere Bauten, die untrennbar mit seinem Namen verbunden sind, etwa das Maternihospital, die Alte Synagoge, das Stadtpalais Oppenheim oder die für den Bankier Martin Wilhelm Oppenheim errichtete Villa Rosa. Letztere gilt als Prototyp deutscher Villenarchitektur.
+    <string name="semper_h3">Zeit in Dresden II</string>
+    <string name="semper_t3">Neben diesen großen Aufträgen entstanden auch andere Bauten, die untrennbar mit seinem Namen verbunden sind, etwa das Maternihospital, die Alte Synagoge, das Stadtpalais Oppenheim oder die für den Bankier Martin Wilhelm Oppenheim errichtete Villa Rosa. Letztere gilt als Prototyp deutscher Villenarchitektur.
 Am 9. Mai 1849 floh Semper und sein Freund Richard Wagner aus Dresden wegen der Teilnahme am Dresdner Maiaufstand. Er kehrte nie nach Dresden zurück.</string>
-    <string name="semper_zeit_desc1">Das erste Opernhaus Sempers</string>
-    <string name="semper_zeit_desc2">Sempergalerie am Theaterplatz, um 1900</string>
+    <string name="semper_bu1">Gottfried Semper kurz vor seinem Tod</string>
+    <string name="semper_bu2">Das erste Opernhaus Sempers</string>
+    <string name="semper_bu3">Sempergalerie am Theaterplatz, um 1900</string>
     <!-- Geschichte -->
     <string name="geschichte_h1">Zeit vor dem Bau</string>
     <string name="geschichte_t1">Die erste historisch nachgewiesene Erwähnung einer Synagoge stammt aus dem Jahre 1265. Schon lange vor dem Nationalsozialismus führten die Juden ein schweres Leben im Raum Dresden. Gebetsräum sind lange Zeit verboten. Auch zu Verfolgungen und Hinrichtungen von Juden kam es. Erst im Jahre 1772 wurden wieder Beträume zugelassen. Eine offizielle Synagoge wurde  im Jahre 1837 gewilligt. </string>
@@ -64,5 +70,21 @@ Am 9. Mai 1849 floh Semper und sein Freund Richard Wagner aus Dresden wegen der 
     <string name="alte_bu2">Querschnitt der alten Synagoge</string>
     <string name="alte_bu3">Grundriss der Alten Synagoge</string>
     <string name="alte_bu4">das Innere der alten Synagoge</string>
+
+    <!-- Quellen -->
+    <string name="quellen_h1">Texte</string>
+    <string name="quellen_l1">Gottfried Semper</string>
+    <string name="quellen_q1" formatted="false">de.wikipedia.org/wiki/Gottfried_Semper\nde.wikipedia.org/wiki/Gemäldegalerie_Alte_Meister\nde.wikipedia.org/wiki/Semperoper</string>
+    <string name="quellen_l2">Geschichte</string>
+    <string name="quellen_q2" formatted="false">de.wikipedia.org/wiki/Alte_Synagoge_(Dresden)\nde.wikipedia.org/wiki/Synagogen_in_Dresden\n</string>
+    <string name="quellen_l3">Alte Synagoge</string>
+    <string name="quellen_q3" formatted="false">de.wikipedia.org/wiki/Alte_Synagoge_(Dresden)</string>
+    <string name="quellen_l4">Neue Synagoge</string>
+    <string name="quellen_q4" formatted="false">de.wikipedia.org/wiki/Neue_Synagoge_(Dresden)\nde.wikipedia.org/wiki/Wandel,_Hoefer_und_Lorch</string>
+    <string name="quellen_h2">Bilder</string>
+    <string name="quellen_b1" formatted="false">de.wikipedia.org/wiki/Gottfried_Semper\nde.wikipedia.org/wiki/Gemäldegalerie_Alte_Meister\nde.wikipedia.org/wiki/Semperoper</string>
+    <string name="quellen_b2" formatted="false">commons.wikimedia.org/wiki/File:Alte_Synagoge_Dresden_1860_2.png\nde.wikipedia.org/wiki/Alte_Synagoge_(Dresden)\nde.wikipedia.org/wiki/Synagoge_Fiedlerstraße_3_(Dresden)</string>
+    <string name="quellen_b3" formatted="false">de.wikipedia.org/w/index.php?title=Datei:Dresden_Innenraum_maurisch_Synagoge_-_1898_,_Helas_Bildnr._27_.jpg&amp;filetimestamp=20090803120945\nde.wikipedia.org/w/index.php?title=Datei:Dresden_alte_Synagoge_Dresden_Grundriss.jpg&amp;filetimestamp=20090902062218\nde.wikipedia.org/w/index.php?title=Datei:Dresden_alte_Synagoge_Querschnitt_-Variante_1.jpg&amp;filetimestamp=20090906051036</string>
+    <string name="quellen_b4" formatted="false">www.flickr.com/photos/meyerfelix/4678931978/in/set-72157626357784697\nwww.flickr.com/photos/meyerfelix/4678931406\nwww.flickr.com/photos/meyerfelix/4678930888\nwww.flickr.com/photos/royboerner/4477476392\n</string>
 
 </resources>

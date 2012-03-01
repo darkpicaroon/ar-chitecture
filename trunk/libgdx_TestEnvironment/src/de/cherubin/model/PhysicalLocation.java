@@ -5,7 +5,8 @@ import com.badlogic.gdx.math.Vector3;
 import android.location.Location;
 
 /**
- * This class is used to represent a physical locations which have a latitude, longitude, and alitude.
+ * This class is used to represent a physical locations which have a latitude,
+ * longitude, and alitude.
  * 
  * @author Justin Wetherell <phishman3579@gmail.com>
  */
@@ -14,29 +15,38 @@ public class PhysicalLocation {
 	private double longitude = 0.0;
 	private double altitude = 0.0;
 
-	public PhysicalLocation() { }
+	public PhysicalLocation() {
+	}
 
 	public PhysicalLocation(PhysicalLocation pl) {
-		if (pl==null) throw new NullPointerException();
-		
+		if (pl == null)
+			throw new NullPointerException();
+
 		set(pl.latitude, pl.longitude, pl.altitude);
 	}
 
 	/**
-	 * Set this objects parameters. This should be used instead of creating new objects.
-	 * @param latitude Latitude of the Location.
-	 * @param longitude Longitude of the Location.
-	 * @param altitude Altitude of the Location.
+	 * Set this objects parameters. This should be used instead of creating new
+	 * objects.
+	 * 
+	 * @param latitude
+	 *            Latitude of the Location.
+	 * @param longitude
+	 *            Longitude of the Location.
+	 * @param altitude
+	 *            Altitude of the Location.
 	 */
 	public void set(double latitude, double longitude, double altitude) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.altitude = altitude;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.altitude = altitude;
 	}
 
 	/**
 	 * Set the Latitude of the PhysicalLocation.
-	 * @param latitude double representing the latitude of the PhysicalLocation.
+	 * 
+	 * @param latitude
+	 *            double representing the latitude of the PhysicalLocation.
 	 */
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
@@ -44,6 +54,7 @@ public class PhysicalLocation {
 
 	/**
 	 * Get the Latitude of the PhysicalLocation.
+	 * 
 	 * @return double representation the latitude of the PhysicalLocation.
 	 */
 	public double getLatitude() {
@@ -52,7 +63,9 @@ public class PhysicalLocation {
 
 	/**
 	 * Set the Longitude of the PhysicalLocation.
-	 * @param longitude double representing the longitude of the PhysicalLocation.
+	 * 
+	 * @param longitude
+	 *            double representing the longitude of the PhysicalLocation.
 	 */
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
@@ -60,6 +73,7 @@ public class PhysicalLocation {
 
 	/**
 	 * Get the Longitude of the PhysicalLocation.
+	 * 
 	 * @return double representation the longitude of the PhysicalLocation.
 	 */
 	public double getLongitude() {
@@ -68,7 +82,9 @@ public class PhysicalLocation {
 
 	/**
 	 * Set the Altitude of the PhysicalLocation.
-	 * @param altitude double representing the altitude of the PhysicalLocation.
+	 * 
+	 * @param altitude
+	 *            double representing the altitude of the PhysicalLocation.
 	 */
 	public void setAltitude(double altitude) {
 		this.altitude = altitude;
@@ -76,6 +92,7 @@ public class PhysicalLocation {
 
 	/**
 	 * Get the Altitude of the PhysicalLocation.
+	 * 
 	 * @return double representation the altitude of the PhysicalLocation.
 	 */
 	public double getAltitude() {
@@ -84,23 +101,25 @@ public class PhysicalLocation {
 
 	/**
 	 * Converts a Location to a MixVector given a PhysicalLocation.
-	 * @param org Origin Location.
-	 * @param gp Current PhysicalLocation.
-	 * @param v MixVector to populate.
-	 * @throws NullPointerException if Location, PhysicalLocation, or MixVector is NULL.
+	 * 
+	 * @param org
+	 *            Origin Location.
+	 * @param gp
+	 *            Current PhysicalLocation.
+	 * @param v
+	 *            MixVector to populate.
+	 * @throws NullPointerException
+	 *             if Location, PhysicalLocation, or MixVector is NULL.
 	 */
 	public static void convLocationToMixVector(Location org, PhysicalLocation gp, Vector3 v) {
-		if (org==null || gp==null || v==null) return;
-		
+		if (org == null || gp == null || v == null)
+			return;
+
 		float[] z = new float[1];
 		z[0] = 0;
-		Location.distanceBetween(	org.getLatitude(), org.getLongitude(), 
-									gp.getLatitude(), org.getLongitude(), 
-									z);
+		Location.distanceBetween(org.getLatitude(), org.getLongitude(), gp.getLatitude(), org.getLongitude(), z);
 		float[] x = new float[1];
-		Location.distanceBetween(	org.getLatitude(), org.getLongitude(), 
-									org.getLatitude(), gp.getLongitude(), 
-									x);
+		Location.distanceBetween(org.getLatitude(), org.getLongitude(), org.getLatitude(), gp.getLongitude(), x);
 		double y = gp.getAltitude() - org.getAltitude();
 		if (org.getLatitude() < gp.getLatitude())
 			z[0] *= -1;
@@ -109,32 +128,35 @@ public class PhysicalLocation {
 
 		v.set(x[0], (float) y, z[0]);
 	}
+
 	public static void convLocationToMixVector(PhysicalLocation org, PhysicalLocation gp, Vector3 v) {
-		if (org==null || gp==null || v==null) return;
-		
+		if (org == null || gp == null || v == null)
+			return;
+
 		float[] y = new float[1];
 		y[0] = 0;
-		Location.distanceBetween(	org.getLatitude(), org.getLongitude(), 
-									gp.getLatitude(), org.getLongitude(), 
-									y);
+		Location.distanceBetween(org.getLatitude(), org.getLongitude(), gp.getLatitude(), org.getLongitude(), y);
 		float[] x = new float[1];
-		Location.distanceBetween(	org.getLatitude(), org.getLongitude(), 
-									org.getLatitude(), gp.getLongitude(), 
-									x);
+		Location.distanceBetween(org.getLatitude(), org.getLongitude(), org.getLatitude(), gp.getLongitude(), x);
 		double z = gp.getAltitude() - org.getAltitude();
 		if (org.getLatitude() < gp.getLatitude())
 			y[0] *= -1;
 		if (org.getLongitude() > gp.getLongitude())
 			x[0] *= -1;
 
-		v.set(x[0], y[0],(float) z );
-		
+		v.set(x[0], y[0], (float) z);
+
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString() {
 		return "(lat=" + latitude + ", lng=" + longitude + ", alt=" + altitude + ")";
+	}
+
+	public Vector3 toVector() {
+		return new Vector3((float) getLatitude(), (float) getLongitude(), (float) getAltitude());
 	}
 }

@@ -65,7 +65,7 @@
         <item name="android:padding">0dip</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-         <item name="android:background">@drawable/home_button</item>
+        <item name="android:background">@drawable/home_button</item>
     </style>
 
     <style name="HomeButton">
@@ -78,6 +78,22 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/text_highlighted</item>
         <item name="android:background">@drawable/home_button</item>
+    </style>
+
+    <style name="quellen_label">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/headline_marginV</item>
+        <item name="android:layout_marginRight">@dimen/headline_marginH</item>
+        <item name="android:layout_marginLeft">@dimen/headline_marginH</item>
+        <item name="android:layout_marginTop">@dimen/headline_marginV</item>
+    </style>
+
+    <style name="quellen_quelle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/headline_marginH</item>
+        <item name="android:layout_marginLeft">@dimen/headline_marginH</item>
     </style>
 
 </resources>

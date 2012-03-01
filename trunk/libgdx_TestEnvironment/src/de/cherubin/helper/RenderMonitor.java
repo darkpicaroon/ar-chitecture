@@ -1,12 +1,16 @@
 package de.cherubin.helper;
 
-
 public class RenderMonitor {
 	public static float aspectRatio = 1;
 	// Cam Config
-	public final static int mPreviewWidth = 800;
-	public final static int mPreviewHeight = 480;
-	public final static int mPreviewFactor = 1;
+	public static int mPreviewWidth = 800;
+	public static int mPreviewHeight = 480;
+	public static int mPreviewFactor = 1;
+	public static float deltaTime = 0;
+	public static long lastFrameStart = 0;
+	public static String debugText = "";
+	public static StringBuilder builder = new StringBuilder();
+	public static float mViewAngle;
 
 	public static float fps() {
 		RenderMonitor.deltaTime();
@@ -18,12 +22,14 @@ public class RenderMonitor {
 		RenderMonitor.builder.setLength(0);
 		return s;
 	}
+
 	public static String copyDebugMessage() {
 		String s = RenderMonitor.builder.toString();
 		return s;
 	}
+
 	public static void debug(String TAG, String text) {
-//		Log.d(TAG, text);
+		// Log.d(TAG, text);
 		RenderMonitor.builder.append(TAG);
 		RenderMonitor.builder.append(": ");
 		RenderMonitor.builder.append(text);
@@ -37,8 +43,4 @@ public class RenderMonitor {
 		return RenderMonitor.lastFrameStart;
 	}
 
-	public static float deltaTime = 0;
-	public static long lastFrameStart = 0;
-	public static String debugText = "";
-	public static StringBuilder builder = new StringBuilder();
 }

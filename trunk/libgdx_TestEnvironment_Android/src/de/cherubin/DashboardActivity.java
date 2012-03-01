@@ -1,11 +1,11 @@
 package de.cherubin;
 
+import de.cherubin.helper.GUITools;
+import de.cherubin.helper.GUITools.ACTIONBAR_TYPE;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.view.View;
-import android.widget.Button;
 
 public class DashboardActivity extends Activity {
 	@Override
@@ -17,12 +17,7 @@ public class DashboardActivity extends Activity {
 
 	private void initLayout() {
 		setContentView(R.layout.dashboard);
-		// btn_play_person = (Button) findViewById(R.id.play_semper_person);
-		// btn_play_zeit1 = (Button) findViewById(R.id.play_semper_zeit1);
-		// btn_play_zeit2 = (Button) findViewById(R.id.play_semper_zeit2);
-		// btn_play_person.setOnClickListener(this);
-		// btn_play_zeit1.setOnClickListener(this);
-		// btn_play_zeit2.setOnClickListener(this);
+		GUITools.buildActionBar(this, ACTIONBAR_TYPE.HOME, getString(R.string.ab_dashboard));
 	}
 
 	public void onClickSemper(View v) {
@@ -41,12 +36,8 @@ public class DashboardActivity extends Activity {
 		startActivity(new Intent(this, NeueSynagogeActivity.class));
 	}
 
-	public void onClickEinstellungen(View v) {
-
-	}
-
 	public void onClickQuellen(View v) {
-
+		startActivity(new Intent(this, QuellenActivity.class));
 	}
 
 	public void onClick3D(View v) {

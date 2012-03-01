@@ -27,4 +27,8 @@ public class GPSdata {
 			index = 0;
 		return gpsPoints.get(index);
 	}
+
+	public static String debug() {
+		return "lat"+gpsPoints.get(index).getLatitude()+"lon: "+gpsPoints.get(index).getLatitude();
+	}
 }

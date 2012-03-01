@@ -3,6 +3,7 @@ package com.test.meshcolortexture;
 import tutorial.vortex.filter.MatrixFilter;
 
 import android.hardware.SensorManager;
+import android.util.Log;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
@@ -21,6 +22,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Slider.SliderStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider.ValueChangedListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.ui.Window.WindowStyle;
+
+import de.cherubin.helper.CircleAnimation;
 import de.cherubin.helper.Cube;
 import de.cherubin.helper.Light;
 import de.cherubin.helper.RenderMonitor;
@@ -29,11 +32,12 @@ import de.cherubin.model.GPSdata;
 
 public class TestEnvironmentRenderer implements ApplicationListener {
 
+	private static final String TAG = "TestEnvironmentRenderer";
 	private PerspectiveCamera camera;
 	private BitmapFont font;
 	private SpriteBatch batch;
-	StillModel model;
-	float a = 0.1f;
+	private StillModel model;
+	private float a = 0.1f;
 	private StillModel synagoge;
 	private float rotationAni = 0;
 	private float movementIncrement = 0;
@@ -45,16 +49,29 @@ public class TestEnvironmentRenderer implements ApplicationListener {
 	@Override
 	public void create() {
 
+		final CircleAnimation animation = new CircleAnimation(20f, GPSdata.userGPS.toVector());
+		
 		// GUI
 		skin = new Skin(Gdx.files.internal("data/uiskin.json"), Gdx.files.internal("data/uiskin.png"));
 		stage = new Stage(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
 		Gdx.input.setInputProcessor(stage);
 
-		final Slider slider = new Slider(0, 50, 1, skin.getStyle(SliderStyle.class), "slider");
-		slider.setValue(10);
-		slider.setValueChangedListener(new ValueChangedListener() {
+		final Slider sliderDis = new Slider(0.0002f, 0.0012f, 0.0001f, skin.getStyle(SliderStyle.class), "distance");
+		sliderDis.setValue(0.0005f);
+		sliderDis.setValueChangedListener(new ValueChangedListener() {
 			public void changed(Slider slider, float value) {
 				sliderValue = value;
+				animation.setRadius(value);
+				Gdx.app.log("UI", "slider: " + value);
+			}
+		});
+		
+		final Slider sliderAngle = new Slider(-0.02f, 0.02f, 0.002f, skin.getStyle(SliderStyle.class), "angle");
+		sliderAngle.setValue(0f);
+		sliderAngle.setValueChangedListener(new ValueChangedListener() {
+			public void changed(Slider slider, float value) {
+				sliderValue = value;
+				animation.setAngle(value);
 				Gdx.app.log("UI", "slider: " + value);
 			}
 		});
@@ -63,7 +80,11 @@ public class TestEnvironmentRenderer implements ApplicationListener {
 		window.x = window.y = 0;
 		window.defaults().pad(5);
 		window.width(Gdx.graphics.getWidth());
-		window.add(slider).width(Gdx.graphics.getWidth() - 40).expandX();
+		window.row().fill().expandX();
+//		window.add(sliderDis).width(Gdx.graphics.getWidth() - 40).expandX();
+//		window.add(sliderAngle).width(Gdx.graphics.getWidth() - 40).expandX();
+		window.add(sliderDis);
+		window.add(sliderAngle);
 		window.pack();
 		stage.addActor(window);
 
@@ -76,10 +97,11 @@ public class TestEnvironmentRenderer implements ApplicationListener {
 		synagoge.setMaterial(new Material("default"));
 
 		ar_synagoge = new ARobject(synagoge);
+		ar_synagoge.setAnimation(animation);
 
 		light = new Light();
 		cube = new Cube();
-		
+
 		// OpenGL
 		Gdx.gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_FASTEST);
 		Gdx.gl.glClearColor(0, 0, 0, 0);
@@ -115,8 +137,9 @@ public class TestEnvironmentRenderer implements ApplicationListener {
 
 		Gdx.gl.glClear(GL11.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 		RenderMonitor.debug("Framerate", Float.toString(RenderMonitor.fps()));
-		RenderMonitor.debug("cubeRotation", Float.toString(rotationAni));
-		RenderMonitor.debug("rotM", rotM[0] + " " + rotM[1] + " " + rotM[2]);
+		// RenderMonitor.debug("cubeRotation", Float.toString(rotationAni));
+		// RenderMonitor.debug("rotM", rotM[0] + " " + rotM[1] + " " + rotM[2]);
+		RenderMonitor.debug("GPS:", GPSdata.debug());
 
 		Gdx.gl.glDisable(GL10.GL_DEPTH_TEST);
 		Gdx.gl.glDisable(GL10.GL_LIGHTING);
@@ -138,6 +161,7 @@ public class TestEnvironmentRenderer implements ApplicationListener {
 
 		if (Gdx.input != null) {
 			Gdx.input.getRotationMatrix(rotM);
+
 			SensorManager.remapCoordinateSystem(rotM, SensorManager.AXIS_Y, SensorManager.AXIS_MINUS_X, tempM);
 			MatrixFilter.LOWPASS.filter(tempM, tempM2);
 		}
@@ -163,10 +187,11 @@ public class TestEnvironmentRenderer implements ApplicationListener {
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
+		Log.d(TAG, width + " " + height);
 		float aspectRatio = (float) width / (float) height;
-		camera = new PerspectiveCamera(67, 1f * aspectRatio, 1f);
+		camera = new PerspectiveCamera(RenderMonitor.mViewAngle, 1f * aspectRatio, 1f);
 		camera.translate(0f, 0f, 0f);
+		camera.far=130;
 	}
 
 	@Override

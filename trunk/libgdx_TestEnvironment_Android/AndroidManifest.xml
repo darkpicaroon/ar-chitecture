@@ -33,6 +33,7 @@
         </activity>
         <activity android:screenOrientation="landscape" android:name=".TestEnvironment_Android_2" >
         </activity>
+        <activity android:name=".QuellenActivity" />
     </application>
 
 </manifest>

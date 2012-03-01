@@ -3,10 +3,12 @@ package de.cherubin.extern;
 import java.io.IOException;
 import java.util.List;
 
+import de.cherubin.helper.RenderMonitor;
 
 import android.content.Context;
 import android.hardware.Camera;
 import android.hardware.Camera.PreviewCallback;
+import android.hardware.Camera.Size;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -31,13 +33,12 @@ public class ARchitectureCamLayer extends SurfaceView implements SurfaceHolder.C
 	private Context mContext;
 	private int mDisplayWidth;
 	private int mDisplayheight;
-	
 
 	public ARchitectureCamLayer(Context context, Camera.PreviewCallback callback) {
 		super(context);
 		this.mContext = context;
 		this.callback = callback;
-		//get Display Size
+		// get Display Size
 		DisplayMetrics metrics = new DisplayMetrics();
 		((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
 		mDisplayWidth = metrics.widthPixels;
@@ -48,10 +49,11 @@ public class ARchitectureCamLayer extends SurfaceView implements SurfaceHolder.C
 		mHolder.addCallback(this);
 		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 	}
+
 	public ARchitectureCamLayer(Context context) {
 		super(context);
 		this.mContext = context;
-		//get Display Size
+		// get Display Size
 		DisplayMetrics metrics = new DisplayMetrics();
 		((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
 		mDisplayWidth = metrics.widthPixels;
@@ -62,22 +64,78 @@ public class ARchitectureCamLayer extends SurfaceView implements SurfaceHolder.C
 		mHolder.addCallback(this);
 		mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 	}
+
 	// mPreview.setLayoutParams(new LayoutParams(100,100))
 
 	public void surfaceCreated(SurfaceHolder holder) {
 		synchronized (this) {
-			mCamera=Camera.open();
+			mCamera = Camera.open();
+		}
+	}
+
+	private Size getOptimalPreviewSize(List<Size> sizes, int w, int h) {
+		final double ASPECT_TOLERANCE = 0.05;
+		double targetRatio = (double) w / h;
+		if (sizes == null)
+			return null;
+
+		Size optimalSize = null;
+		double minDiff = Double.MAX_VALUE;
+
+		int targetHeight = h;
+
+		// Try to find an size match aspect ratio and size
+		for (Size size : sizes) {
+			double ratio = (double) size.width / size.height;
+			if (Math.abs(ratio - targetRatio) > ASPECT_TOLERANCE)
+				continue;
+			if (Math.abs(size.height - targetHeight) < minDiff) {
+				optimalSize = size;
+				minDiff = Math.abs(size.height - targetHeight);
+			}
+		}
+
+		// Cannot find the one match the aspect ratio, ignore the requirement
+		if (optimalSize == null) {
+			minDiff = Double.MAX_VALUE;
+			for (Size size : sizes) {
+				if (Math.abs(size.height - targetHeight) < minDiff) {
+					optimalSize = size;
+					minDiff = Math.abs(size.height - targetHeight);
+				}
+			}
+		}
+		return optimalSize;
+	}
+
+	public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
+		Log.d(TAG, "surfaceChanged: " + w + " " + h);
+		synchronized (this) {
+			if (isPreviewRunning) {
+				mCamera.stopPreview();
+			}
 			Camera.Parameters p = mCamera.getParameters();
-			p.setPreviewSize(RenderMonitor.mPreviewWidth/RenderMonitor.mPreviewFactor, RenderMonitor.mPreviewHeight/RenderMonitor.mPreviewFactor);
+			List<Size> sizes = p.getSupportedPreviewSizes();
+			Size optimalSize = getOptimalPreviewSize(sizes, w, h);
+			p.setPreviewSize(optimalSize.width, optimalSize.height);
+			RenderMonitor.mPreviewWidth=optimalSize.width;
+			RenderMonitor.mPreviewHeight=optimalSize.height;
+			RenderMonitor.mViewAngle = p.getHorizontalViewAngle();
 			mCamera.setParameters(p);
-			mCamera.startPreview();
+
 			try {
 				mCamera.setPreviewDisplay(holder);
 			} catch (IOException e) {
-				Log.e(TAG, "mCamera.setPreviewDisplay(holder);");
+				Log.e(TAG, e.getMessage());
 			}
-			// mCamera.setPreviewCallback(this);
+			mCamera.startPreview();
+			isPreviewRunning = true;
 		}
+	}
+
+	public void onPreviewFrame(byte[] arg0, Camera arg1) {
+		if (callback != null)
+			callback.onPreviewFrame(arg0, arg1);
 	}
 
 	public void surfaceDestroyed(SurfaceHolder holder) {
@@ -90,24 +148,11 @@ public class ARchitectureCamLayer extends SurfaceView implements SurfaceHolder.C
 					mCamera.stopPreview();
 					isPreviewRunning = false;
 					mCamera.release();
-					mCamera=null;
+					mCamera = null;
 				}
 			} catch (Exception e) {
 				Log.e("Camera", e.getMessage());
 			}
 		}
-	}
-
-	public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
-		synchronized (this) {
-//			this.mPreviewWidth = w;
-//			this.mPreviewHeight = h;
-			Log.d(TAG, "surfaceChanged: "+w+" "+h);
-		}
-	}
-
-	public void onPreviewFrame(byte[] arg0, Camera arg1) {
-		if (callback != null)
-			callback.onPreviewFrame(arg0, arg1);
 	}
 }
