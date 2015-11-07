@@ -1,0 +1,1 @@
+Attempt to create an augmented reality app, which provides an interface to show 3D modells of lost buildings and so on. It's Based on Android. It's not a Framework. It's just an consumer Application.
